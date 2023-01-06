@@ -57,3 +57,7 @@ p {
     max-width: 40;
     min-width: 90%;
 }
+
+.copyright {
+    text-align: center;
+}
