@@ -1,0 +1,59 @@
+body {
+    width: 90%;
+    margin: auto;
+}
+
+.box {
+    padding: 10px;
+    margin: 2px;
+}
+
+
+.logo {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    background-color: #EEEEEE;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin: 1px;
+}
+
+.utils {
+    display: flex;
+}
+
+.col {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.special {
+    width: 37%;
+    background-color: #7EE5DA;
+}
+
+.help {
+    width: 20%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #70CCC2;
+}
+
+.subscribe {
+    background-color: #62B3AA;
+    flex-grow: 1;
+}
+
+.textbox {
+    width: 0;
+    max-width: 40;
+    min-width: 90%;
+}
