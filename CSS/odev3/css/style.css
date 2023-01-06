@@ -141,6 +141,11 @@ box-shadow: 0 2px 3px 0 rgba(0,0,0,0.24), 0 2px 5px 0 rgba(0,0,0,0.19);
   cursor: text;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
 .googlesearch {
   margin: 11px 4px;
   padding: 0 16px;
@@ -149,15 +154,22 @@ box-shadow: 0 2px 3px 0 rgba(0,0,0,0.24), 0 2px 5px 0 rgba(0,0,0,0.19);
   text-align: center;
   cursor: pointer;
   user-select: none;
+  /* display: inline; */
+  flex: 1;
+  /* display: flex; */
 }
 
 .feelinglucky {
+  margin: 11px 4px;
   padding: 0 16px;
   line-height: 27px;
   min-width: 54px;
   text-align: center;
   cursor: pointer;
   user-select: none;
+  /* display: inline; */
+  flex: 1;
+  /* display: flex; */
 }
 
 .footer {
@@ -192,3 +204,4 @@ box-shadow: 0 2px 3px 0 rgba(0,0,0,0.24), 0 2px 5px 0 rgba(0,0,0,0.19);
 .footerli a:hover {
   text-decoration: underline;
 }
+
