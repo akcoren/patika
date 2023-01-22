@@ -31,8 +31,10 @@ const menu = [
         title: "Dan Dan Mian",
         category: "China",
         price: 5.99,
+        // img:
+        // "https://www.savingdessert.com/wp-content/uploads/2019/02/Dan-Dan-Noodles-10.jpg",
         img:
-            "https://www.savingdessert.com/wp-content/uploads/2019/02/Dan-Dan-Noodles-10.jpg",
+            "https://www.chilipeppermadness.com/wp-content/uploads/2021/05/Dan-Dan-Noodles-Recipe1.webp",
         desc: `Dan dan noodle, serving with green onion `,
     },
     {
@@ -82,38 +84,103 @@ const menu = [
     },
 ];
 
+// html main DOMS
+const menuItemsDOM = document.querySelector("#menu-items")
+const filterBtnDOM = document.querySelector("#filter-buttons")
 
+// every unique category in the menu
 const uniqueCategory = [... new Set(menu.map(item => item.category))]
-console.log(uniqueCategory)
+
+// create filter buttons for each unique category
+createButtons()
+
+// initialize whole menu
+menu.forEach(item => createMenuItem(item))
 
 
-
-const filterBtnDOM = document.querySelector("#filterButtons")
-uniqueCategory.forEach(category => {
+function createButtons() {
+    // All button
     let btnDOM = document.createElement("button")
-    btnDOM.classList.add("btn", "btn-primary", "m-2")
-    btnDOM.innerHTML = category
-    // filterMenuItems(category)
-    btnDOM.addEventListener("click",filterMenuItems)
+    btnDOM.classList.add("btn", "btn-outline-dark", "btn-item")
+    btnDOM.innerHTML = "All"
+    btnDOM.addEventListener("click", filterMenuItems)
     filterBtnDOM.append(btnDOM)
-});
+    
+    // construction for filter buttons for every unique category
+    uniqueCategory.forEach(category => {
+        let btnDOM = document.createElement("button")
+        btnDOM.classList.add("btn", "btn-outline-dark", "btn-item")
+        btnDOM.innerHTML = category
+        btnDOM.addEventListener("click", filterMenuItems)
+        filterBtnDOM.append(btnDOM)
+    });
 
+}
 
 function filterMenuItems() {
+    // erase everythin on the menu items 
+    menuItemsDOM.innerHTML = ""
+
     let category = this.innerHTML
     console.log(`Items are filtered in ${category}`)
 
+    if (category === "All") {
+        menu.forEach(item => {
+            createMenuItem(item)
+        })
+        return
+    }
+
+    const filteredArr = menu.filter(e => e.category === category)
+    filteredArr.forEach((item) => {
+        createMenuItem(item)
+    })
+
 }
 
+// create menu item and append to the menuItems container
+function createMenuItem(item) {
 
-const menuItemsDOM = document.querySelector("#menuItems")
-function createMenuItem() {
-    // menuItemsDOM.innerHTML = "YARRAKOS"
-    // console.log("menu item created!")
+    // menu item container
     const menuItemDOM = document.createElement("div")
-    const imgDOM = document.createElement("img")
+    menuItemDOM.classList.add("menu-items", "col-lg-6", "col-sm-12")
+
+    // menu item img inside menuItemDOM
+    const menuItemImgDOM = document.createElement("img")
+    menuItemImgDOM.classList.add("photo")
+    menuItemImgDOM.src = item.img
+    menuItemImgDOM.alt = item.title
+
+    // menu item info inside menuItemDOM
+    const menuItemInfoDOM = document.createElement("div")
+    menuItemInfoDOM.classList.add("menu-info")
+
+    // menu item title inside menuItemInfoDOM
+    const menuItemTitleDOM = document.createElement("div")
+    menuItemTitleDOM.classList.add("menu-title")
+
+    // menu item title text inside menuItemTitleDOM
+    const menuItemTitle = document.createElement("h4")
+    menuItemTitle.innerHTML = item.title
+
+    // menu item price text inside menuItemTitleDOM
+    const menuItemPrice = document.createElement("h4")
+    menuItemPrice.classList.add("price")
+    menuItemPrice.innerHTML = `${item.price}`
+
+    // menu item description inside inside menuItemInfoDOM    
+    const menuItemTextDOM = document.createElement("div")
+    menuItemTextDOM.classList.add("menu-text")
+    menuItemTextDOM.innerHTML = item.desc
     
+    menuItemTitleDOM.append(menuItemTitle, menuItemPrice)
+    menuItemInfoDOM.append(menuItemTitleDOM, menuItemTextDOM)
+    menuItemDOM.append(menuItemImgDOM, menuItemInfoDOM)
+    menuItemsDOM.append(menuItemDOM)
+
+    console.log("menu item created!")
 }
 
 
-// createMenuItem()
+
+

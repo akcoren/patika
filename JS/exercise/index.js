@@ -1,4 +1,4 @@
-\// console.log(document.URL)
+// console.log(document.URL)
 // console.log(document.location)
 // console.log(document.location.hostname)
 // console.log(document.body.lastChild)
