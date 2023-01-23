@@ -1,0 +1,24 @@
+*, body {
+    background-color: #E9ECEF;
+}
+.regular-page {
+    text-align: center;
+}
+
+.list-images {
+    list-style-position: inside;
+}
+
+
+h2 {
+    color: brown;
+    font-family:'Franklin Gothic Medium';
+}
+
+p {
+    font-size: larger;
+}
+
+li {
+    font-style: italic;
+}
