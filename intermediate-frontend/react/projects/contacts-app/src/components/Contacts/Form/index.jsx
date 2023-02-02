@@ -46,11 +46,7 @@ const Form = ({ addContact, contacts }) => {
                 />
             </div>
 
-            <div>
-                {form.fullname} {form.phone_number}
-            </div>
-
-            <div>
+            <div className="btn">
                 <button>Add</button>
             </div>
         </form>
