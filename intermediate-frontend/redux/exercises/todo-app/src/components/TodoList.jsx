@@ -1,18 +1,33 @@
 import React from "react";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleTodo, destroyTodo, selectFilteredTodos } from "../redux/todos/todosSlice";
+
+let filtered = [];
 
 const TodoList = () => {
-  const items = useSelector((state) => state.todos.items);
+  const dispatch = useDispatch();
+  const filteredItems = useSelector(selectFilteredTodos);
+
+  const handleDestroy = (id) => {
+    if (window.confirm("Are you sure?")) {
+      dispatch(destroyTodo(id));
+    }
+  };
 
   return (
     <ul className="todo-list">
-      {items.map((item) => (
+      {filteredItems.map((item) => (
         <li key={item.id} className={item.completed ? "completed" : undefined}>
           <div className="view">
-            <input className="toggle" type="checkbox" />
+            <input
+              className="toggle"
+              type="checkbox"
+              onChange={() => dispatch(toggleTodo({ id: item.id }))}
+              checked={item.completed}
+            />
             <label>{item.title}</label>
-            <button className="destroy"></button>
+            <button className="destroy" onClick={() => handleDestroy(item.id)}></button>
           </div>
         </li>
       ))}
