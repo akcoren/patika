@@ -3,8 +3,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTodo, destroyTodo, selectFilteredTodos } from "../redux/todos/todosSlice";
 
-let filtered = [];
-
 const TodoList = () => {
   const dispatch = useDispatch();
   const filteredItems = useSelector(selectFilteredTodos);
