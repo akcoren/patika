@@ -20,3 +20,11 @@ export const removeTodosAsync = createAsyncThunk("todos/removeTodosAsync", async
   await axios.delete(`${process.env.REACT_APP_API_BASE_ENDPOINT}/todos/${id}`);
   return id;
 });
+
+export const removeCompletedTodosAsync = createAsyncThunk(
+  "todos/removeCompletedTodosAsync",
+  async (id) => {
+    const res = await axios.delete(`${process.env.REACT_APP_API_BASE_ENDPOINT}/todos/completed`);
+    return res.data;
+  }
+);

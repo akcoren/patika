@@ -31,7 +31,7 @@ let todos = [
   {
     id: nanoid(),
     title: 'todo 4',
-    completed: false,
+    completed: true,
   },
   {
     id: nanoid(),
@@ -40,7 +40,9 @@ let todos = [
   },
 ];
 
-app.get('/todos', (req, res) => res.send(todos));
+app.get('/todos', (req, res) => {
+  res.send(todos)
+});
 
 app.post('/todos', (req, res) => {
   const todo = { title: req.body.title, id: nanoid(), completed: false };
@@ -60,6 +62,13 @@ app.patch('/todos/:id', (req, res) => {
 
 app.delete('/todos/:id', (req, res) => {
   const id = req.params.id;
+
+  
+  if (id==="completed") {
+    const filtered = todos.filter((item) => item.completed === false)
+    todos = filtered
+  }
+
   const index = todos.findIndex((todo) => todo.id == id);
   if (index > -1) {
     todos.splice(index, 1);

@@ -1,6 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { addTodosAsync, removeTodosAsync, toggleTodosAsync, getTodosAsync } from "./services";
+import { createSlice } from "@reduxjs/toolkit";
+import { addTodosAsync, removeTodosAsync, toggleTodosAsync, getTodosAsync, removeCompletedTodosAsync } from "./services";
 
 export const todosSlice = createSlice({
   name: "todos",
@@ -15,9 +14,6 @@ export const todosSlice = createSlice({
     },
   },
   reducers: {
-    destroyTodo: (state, action) => {
-      const id = action.payload;
-    },
     changeActiveFilter: (state, action) => {
       state.activeFilter = action.payload;
     },
@@ -27,6 +23,7 @@ export const todosSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    // get todos
     builder.addCase(getTodosAsync.pending, (state, action) => {
       state.isLoading = true;
     });
@@ -64,6 +61,11 @@ export const todosSlice = createSlice({
       const id = action.payload;
       const index = state.items.findIndex((item) => item.id === id);
       state.items.splice(index, 1);
+    });
+
+    // remove completed
+    builder.addCase(removeCompletedTodosAsync.fulfilled, (state, action) => {
+      state.items = action.payload;
     });
   },
 });
