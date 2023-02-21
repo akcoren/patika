@@ -1,17 +1,15 @@
 import React from "react";
-import AddNoteButton from "./AddNoteButton";
-import Note from "./Note";
+import AddNoteForm from "./AddNoteForm";
+import NoteSearchBox from "./NoteSearchBox";
 import NotesList from "./NotesList";
 
 const Content = () => {
   return (
     <div>
       Content
-      <AddNoteButton />
+      <NoteSearchBox />
+      <AddNoteForm />
       <NotesList />
-      <Note />
-      <Note />
-      <Note />
     </div>
   );
 };

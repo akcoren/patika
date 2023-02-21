@@ -1,27 +1,18 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { destroyNote } from "../redux/notes/notesSlice";
+import { useSelector } from "react-redux";
+import Note from "./Note";
 
 const NotesList = () => {
-  const dispatch = useDispatch(); // will be used for destroy note
   const notes = useSelector((state) => state.notes.items);
-
-  const handleDestroy = (id) => {
-    dispatch(destroyNote(id))
-  }
+  const filterText = useSelector((state) => state.notes.filterText);
+  const filteredNotes = notes.filter(
+    (item) => item.body.includes(filterText) || item.title.includes(filterText)
+  );
 
   return (
     <div>
-      {notes.map((item) => (
-        <li key={item.id}>
-          {item.title} {item.color}
-          <button 
-          className="m-1 rounded-lg border-2 border-slate-900 bg-slate-100 p-1"
-          onClick={() => handleDestroy(item.id)}
-          >
-            Delete
-          </button>
-        </li>
+      {filteredNotes.map((item) => (
+        <Note key={item.id} {...item} />
       ))}
     </div>
   );
