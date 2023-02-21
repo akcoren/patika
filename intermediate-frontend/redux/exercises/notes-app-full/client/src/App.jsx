@@ -7,7 +7,7 @@ import SearchBox from "./components/SearchBox";
 
 function App() {
   return (
-    <div className="m-auto">
+    <div className="m-auto bg-gray-700 h-full">
       <Header />
       <SearchBox />
       <InputText />
