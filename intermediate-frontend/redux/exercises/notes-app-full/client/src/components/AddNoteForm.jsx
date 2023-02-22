@@ -2,6 +2,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from "../redux/notes/notesSlice";
+import ColorPicker from "./ColorPicker";
 import GenericButton from "./GenericButton";
 import TextInputField from "./TextInputField";
 
@@ -37,13 +38,20 @@ const AddNoteForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      ADD NOTE FORM
-      <TextInputField name="noteTitle" value={title} onChange={handleTitleChange} />
-      <TextInputField name="noteBody" value={body} onChange={handleBodyChange} />
-      <TextInputField name="noteColor" value={color} onChange={handleColorChange} />
-      <GenericButton type="submit" onClick={() => {}} buttonText="Add" />
-    </form>
+    <div>
+      <form onSubmit={handleSubmit} className="flex flex-col items-center">
+        ADD NOTE FORM
+        <div >
+          <TextInputField name="noteTitle" value={title} onChange={handleTitleChange} />
+          <TextInputField name="noteBody" value={body} onChange={handleBodyChange} />
+          <TextInputField name="noteColor" value={color} onChange={handleColorChange} />
+        </div>
+        <div className="flex py-2">
+          <ColorPicker />
+          <GenericButton type="submit" onClick={() => {}} buttonText="Add" />
+        </div>
+      </form>
+    </div>
   );
 };
 

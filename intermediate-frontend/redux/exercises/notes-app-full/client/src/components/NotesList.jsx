@@ -5,12 +5,17 @@ import Note from "./Note";
 const NotesList = () => {
   const notes = useSelector((state) => state.notes.items);
   const filterText = useSelector((state) => state.notes.filterText);
-  const filteredNotes = notes.filter(
-    (item) => item.body.includes(filterText) || item.title.includes(filterText)
-  );
+  const filteredNotes = notes
+    .filter(
+      (item) =>
+        item.body.toLowerCase().includes(filterText.toLowerCase()) ||
+        item.title.toLowerCase().includes(filterText.toLowerCase())
+    )
+    .slice(0)
+    .reverse();
 
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-4 ">
       {filteredNotes.map((item) => (
         <Note key={item.id} {...item} />
       ))}
@@ -19,3 +24,4 @@ const NotesList = () => {
 };
 
 export default NotesList;
+
