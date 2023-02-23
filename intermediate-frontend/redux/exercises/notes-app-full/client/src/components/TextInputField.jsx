@@ -10,7 +10,7 @@ const TextInputField = ({name, value, onChange}) => {
         type="text"
         name={name}
         id={name}
-        className="my-1 block rounded-md border-gray-300 p-2 text-sm shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        className="my-1 block rounded-md border-gray-300 p-2 text-sm  focus:border-indigo-500 focus:ring-indigo-500"
         value={value}
         onChange={onChange}
       />
