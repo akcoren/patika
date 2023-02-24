@@ -5,7 +5,7 @@ import NotesList from "./NotesList";
 
 const Content = () => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-skin-primary">
       Content
       <NoteSearchBox />
       <AddNoteForm />

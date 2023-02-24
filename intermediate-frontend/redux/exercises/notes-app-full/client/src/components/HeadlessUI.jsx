@@ -26,7 +26,7 @@ const HeadlessUI = () => {
             </a>
           )}
         </Menu.Item>
-        <Menu.Item disabled>
+        <Menu.Item>
           <span className="opacity-75">Invite a friend (coming soon!)</span>
         </Menu.Item>
       </Menu.Items>

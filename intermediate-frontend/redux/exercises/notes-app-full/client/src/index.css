@@ -2,6 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  background-color:#1f2937;
+@layer base {
+  :root {
+    --color-text-primary: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-placeholder: theme("colors.lightTextPlaceholder.DEFAULT");
+    --color-text-search-placeholder: theme(colors.lightSearchTextPlaceholder.DEFAULT);
+    --color-background-primary: theme("colors.lightPrimaryBackground.DEFAULT");
+    --color-background-search: theme("colors.lightSearchBackground.DEFAULT");
+    --color-note-01: theme("colors.lightRed.DEFAULT");
+    --color-note-02: theme("colors.lightOrange.DEFAULT");
+    --color-note-03: theme("colors.lightYellow.DEFAULT");
+    --color-note-04: theme("colors.lightGreen.DEFAULT");
+    --color-note-05: theme("colors.lightTeal.DEFAULT");
+    --color-note-06: theme("colors.lightBlue.DEFAULT");
+    --color-note-07: theme("colors.lightSail.DEFAULT");
+    --color-note-08: theme("colors.lightPurple.DEFAULT");
+    --color-note-09: theme("colors.lightPink.DEFAULT");
+    --color-note-10: theme("colors.lightBrown.DEFAULT");
+    --color-note-11: theme("colors.lightGray.DEFAULT");
+  }
+
+  .theme-dark {
+    --color-text-primary: theme("colors.darkTextPrimary.DEFAULT");
+    --color-text-placeholder: theme("colors.darkTextPlaceholder.DEFAULT");
+    --color-text-search-placeholder: theme(colors.darkSearchTextPlaceholder.DEFAULT);
+    --color-background-primary: theme("colors.darkPrimaryBackground.DEFAULT");
+    --color-background-search: theme("colors.darkSearchBackground.DEFAULT");
+    --color-note-01: theme("colors.darkRed.DEFAULT");
+    --color-note-02: theme("colors.darkOrange.DEFAULT");
+    --color-note-03: theme("colors.darkYellow.DEFAULT");
+    --color-note-04: theme("colors.darkGreen.DEFAULT");
+    --color-note-05: theme("colors.darkTeal.DEFAULT");
+    --color-note-06: theme("colors.darkBlue.DEFAULT");
+    --color-note-07: theme("colors.darkSail.DEFAULT");
+    --color-note-08: theme("colors.darkPurple.DEFAULT");
+    --color-note-09: theme("colors.darkPink.DEFAULT");
+    --color-note-10: theme("colors.darkBrown.DEFAULT");
+    --color-note-11: theme("colors.darkGray.DEFAULT");
+    --color-border-primary: theme("colors.gray.600");
+    --color-shadow-primary: theme("colors.gray.600");
+    --color-border-seperator: theme("colors.gray.600");
+
+  }
+
+  .theme-light {
+    --color-text-primary: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-placeholder: theme("colors.lightTextPlaceholder.DEFAULT");
+    --color-text-search-placeholder: theme(colors.lightSearchTextPlaceholder.DEFAULT);
+    --color-background-primary: theme("colors.lightPrimaryBackground.DEFAULT");
+    --color-background-search: theme("colors.lightSearchBackground.DEFAULT");
+    --color-note-01: theme("colors.lightRed.DEFAULT");
+    --color-note-02: theme("colors.lightOrange.DEFAULT");
+    --color-note-03: theme("colors.lightYellow.DEFAULT");
+    --color-note-04: theme("colors.lightGreen.DEFAULT");
+    --color-note-05: theme("colors.lightTeal.DEFAULT");
+    --color-note-06: theme("colors.lightBlue.DEFAULT");
+    --color-note-07: theme("colors.lightSail.DEFAULT");
+    --color-note-08: theme("colors.lightPurple.DEFAULT");
+    --color-note-09: theme("colors.lightPink.DEFAULT");
+    --color-note-10: theme("colors.lightBrown.DEFAULT");
+    --color-note-11: theme("colors.lightGray.DEFAULT");
+    --color-border-primary: theme("colors.gray.400");
+    --color-border-seperator: theme("colors.gray.200");
+    --color-shadow-primary: theme("colors.gray.400");
+  }
 }
+
+/* html {
+  background-color:#1f2937;
+} */

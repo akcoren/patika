@@ -38,15 +38,15 @@ const AddNoteForm = () => {
   };
 
   return (
-    <div className="w-full bg-slate-200">
-      <form onSubmit={handleSubmit} className="flex flex-col items-center ">
+    <div className="w-full">
+      <form onSubmit={handleSubmit} className="flex flex-col items-center">
         ADD NOTE FORM
-        <div className="w-1/2 rounded-md shadow-md shadow-slate-600">
+        <div className="w-1/2 rounded-md shadow-md shadow-skin-primary border-2 border-skin-primary">
           <input
             type="text"
             name="noteTitle"
             id="noteTitle"
-            className="text-md w-full border-b-2 rounded-t-md block border-b-gray-100 p-3 placeholder:text-gray-400 focus:outline-none"
+            className="text-md block w-full rounded-t-md border-b-2 border-b-skin-seperator p-3 placeholder:text-skin-placeholder focus:outline-none bg-skin-primary"
             value={title}
             onChange={handleTitleChange}
             placeholder="Title"
@@ -55,17 +55,17 @@ const AddNoteForm = () => {
             type="text"
             name="noteBody"
             id="noteBody"
-            className="block w-full pt-3 px-3 pb-0 rounded-b-md text-sm placeholder:text-gray-400 focus:outline-none h-64"
+            className="block h-64 w-full rounded-b-md px-3 pt-3 pb-0 text-sm placeholder:text-skin-placeholder focus:outline-none bg-skin-primary"
             value={body}
             onChange={handleBodyChange}
-            placeholder="Body"
+            placeholder="What's on your mind?"
           />
           {/* <TextInputField name="noteTitle" value={title} onChange={handleTitleChange} /> */}
           {/* <TextInputField name="noteBody" value={body} onChange={handleBodyChange} /> */}
         </div>
-          <TextInputField name="noteColor" value={color} onChange={handleColorChange} />
+        {/* <TextInputField name="noteColor" value={color} onChange={handleColorChange} /> */}
         <div className="flex py-2">
-          <ColorPicker />
+          <ColorPicker color={color} setColor={setColor} />
           <GenericButton type="submit" onClick={() => {}} buttonText="Add" />
         </div>
       </form>

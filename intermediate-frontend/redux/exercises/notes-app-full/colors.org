@@ -1,0 +1,47 @@
+These are taken from the google keep app
+light theme colors 
+"#f28b82" // red
+"#fbbc04" // orange
+"#fff475" // yellow
+"#ccff90" // green
+"#a7ffeb" // teal
+"#cbf0f8" // blue
+"#aecbfa" // dark blue // named as Sail
+"#d7aefb" // purple 
+"#fdcfe8" // pink
+"#e6c9a8" // brown
+"#e8eaed" // gray
+"#202124" // textPrimary
+"#FFFFFF" // backgroundPrimary
+
+dark theme colors
+"#5c2b29" // red
+"#614a19" // orange
+"#635d19" // yellow
+"#345920" // green
+"#16504b" // teal
+"#2d555e" // blue
+"#1e3a5f" // dark blue // named as Sail
+"#42275e" // purple
+"#5b2245" // pink
+"#442f19" // brown
+"#3c3f43" // gray
+"#E8EAED" // textPrimary
+"#202124" // backgroundPrimary
+
+http://repec.sowi.unibe.ch/stata/palettes/colors.html
+"#f8766d" // rose
+"#d89000" // gold
+"#a3a500" // dark yellow
+"#39b600" // dark green
+"#00bf7d" // dark green
+"#00bfc4" // dark teal
+"#00b0f6" // turquoise
+"#9590ff" // purple
+"#e76bf3" // lavender
+"#ff62bc" // pink
+"#00b0f6" // red
+
+
+
+

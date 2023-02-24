@@ -2,7 +2,7 @@ import React from 'react'
 
 const Heading = () => {
   return (
-    <div>Heading</div>
+    <div className='text-skin-primary'>Heading</div>
   )
 }
 
