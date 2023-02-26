@@ -1,70 +1,73 @@
-import { Menu, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Menu } from "@headlessui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "../redux/notes/notesSlice";
 
 export default function Example() {
-  const handleClick = () => {
-    console.log("drowdown clicked");
+  const activeTheme = useSelector((state) => state.notes.theme);
+  const dispatch = useDispatch();
+
+  const handleClick = (e) => {
+    // console.log(e.target.value);
+    // console.log("drowdown clicked");
+    dispatch(changeTheme(e.target.value));
   };
 
   return (
     <div>
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+          <Menu.Button
+            className="w-full justify-center rounded-md border border-skin-primary
+             bg-skin-menu-button px-4 py-2 text-sm font-medium text-skin-menu-button 
+             hover:bg-skin-menu-button-hover hover:text-skin-menu-button-hover">
             Options
           </Menu.Button>
         </div>
 
-        <Menu.Items className="absolute right-0 mt-2 w-36 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items
+          className="absolute right-0 mt-2 w-32 origin-top-right 
+        rounded-md border border-skin-primary bg-skin-primary 
+        shadow-lg shadow-skin-primary">
           <div className="px-1 py-1">
             <Menu.Item>
               {({ active }) => (
                 <button
+                  value="theme-light"
                   onClick={handleClick}
                   className={`${
-                    active ? "bg-violet-500 text-white" : "text-gray-900"
+                    active
+                      ? "bg-skin-menu-button-hover text-skin-menu-button-hover"
+                      : "bg-skin-menu-button text-skin-menu-button"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                  Edit
+                  Light Theme
                 </button>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <button
+                  value="theme-dark"
+                  onClick={handleClick}
                   className={`${
-                    active ? "bg-violet-500 text-white" : "text-gray-900"
+                    active
+                      ? "bg-skin-menu-button-hover text-skin-menu-button-hover"
+                      : "bg-skin-menu-button text-skin-menu-button"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                  Duplicate
+                  Dark Theme
                 </button>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <button
+                  value="theme-zurna"
+                  onClick={handleClick}
                   className={`${
-                    active ? "bg-violet-500 text-white" : "text-gray-900"
+                    active
+                      ? "bg-skin-menu-button-hover text-skin-menu-button-hover"
+                      : "bg-skin-menu-button text-skin-menu-button"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                  Archive
-                </button>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <button
-                  className={`${
-                    active ? "bg-violet-500 text-white" : "text-gray-900"
-                  } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                  Move
-                </button>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <button
-                  className={`${
-                    active ? "bg-violet-500 text-white" : "text-gray-900"
-                  } group flex w-full items-center rounded-md px-2 py-2 text-sm`}>
-                  Delete
+                  Zurna Theme
                 </button>
               )}
             </Menu.Item>

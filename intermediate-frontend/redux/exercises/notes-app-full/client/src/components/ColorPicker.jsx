@@ -10,18 +10,19 @@ const ColorPicker = ({color, setColor}) => {
   }
  
   return (
-    <div className="flex gap-1 mr-3">
-      <button name="color01" className="h-6 w-6 rounded-full bg-skin-note-01" onClick={handleClick} value="note01" type="button" />
-      <button name="color02" className="h-6 w-6 rounded-full bg-skin-note-02" onClick={handleClick} value="note02" type="button" />
-      <button name="color03" className="h-6 w-6 rounded-full bg-skin-note-03" onClick={handleClick} value="note03" type="button" />
-      <button name="color04" className="h-6 w-6 rounded-full bg-skin-note-04" onClick={handleClick} value="note04" type="button" />
-      <button name="color05" className="h-6 w-6 rounded-full bg-skin-note-05" onClick={handleClick} value="note05" type="button" />
-      <button name="color06" className="h-6 w-6 rounded-full bg-skin-note-06" onClick={handleClick} value="note06" type="button" />
-      <button name="color07" className="h-6 w-6 rounded-full bg-skin-note-07" onClick={handleClick} value="note07" type="button" />
-      <button name="color08" className="h-6 w-6 rounded-full bg-skin-note-08" onClick={handleClick} value="note08" type="button" />
-      <button name="color09" className="h-6 w-6 rounded-full bg-skin-note-09" onClick={handleClick} value="note09" type="button" />
-      <button name="color10" className="h-6 w-6 rounded-full bg-skin-note-10" onClick={handleClick} value="note10" type="button" />
-      <button name="color11" className="h-6 w-6 rounded-full bg-skin-note-11" onClick={handleClick} value="note11" type="button" />
+    <div className="flex gap-1 mr-3 p-2">
+      <button name="color-00" className="hover:border-2 hover:border-skin-primary border border-gray-700 h-6 w-6 rounded-full bg-skin-primary" onClick={handleClick} value="0" type="button" />
+      <button name="color-01" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-01" onClick={handleClick} value="1" type="button" />
+      <button name="color-02" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-02" onClick={handleClick} value="2" type="button" />
+      <button name="color-03" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-03" onClick={handleClick} value="3" type="button" />
+      <button name="color-04" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-04" onClick={handleClick} value="4" type="button" />
+      <button name="color-05" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-05" onClick={handleClick} value="5" type="button" />
+      <button name="color-06" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-06" onClick={handleClick} value="6" type="button" />
+      <button name="color-07" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-07" onClick={handleClick} value="7" type="button" />
+      <button name="color-08" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-08" onClick={handleClick} value="8" type="button" />
+      <button name="color-09" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-09" onClick={handleClick} value="9" type="button" />
+      <button name="color-10" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-10" onClick={handleClick} value="10" type="button" />
+      <button name="color-11" className="hover:border-2 border-skin-primary h-6 w-6 rounded-full bg-skin-note-11" onClick={handleClick} value="11" type="button" />
     </div>
   );
 };

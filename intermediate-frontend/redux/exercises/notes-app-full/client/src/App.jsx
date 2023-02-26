@@ -2,10 +2,17 @@ import Content from "./components/Content";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Heading from "./components/Heading";
+import { useSelector } from "react-redux";
+
 
 function App() {
+
+  const theme = useSelector((state) => state.notes.theme);
+
+
+
   return (
-    <div className="theme-dark min-h-screen min-w-full bg-skin-primary">
+    <div className={`${theme} theme-dark min-h-screen min-w-full bg-skin-primary`}>
       <div className="mx-auto flex max-w-5xl flex-col items-center">
         <Header />
         <Heading />

@@ -8,20 +8,14 @@ const HeadlessUI = () => {
       <Menu.Items>
         <Menu.Item>
           {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
-            >
+            <a className={`${active && "bg-blue-500"}`} href="/account-settings">
               Account settings
             </a>
           )}
         </Menu.Item>
         <Menu.Item>
           {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
-            >
+            <a className={`${active && "bg-blue-500"}`} href="/account-settings">
               Documentation
             </a>
           )}
@@ -31,7 +25,7 @@ const HeadlessUI = () => {
         </Menu.Item>
       </Menu.Items>
     </Menu>
-  )
+  );
 };
 
 export default HeadlessUI;

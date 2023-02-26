@@ -9,8 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.11",
-    "@headlessui/tailwindcss": "^0.1.2",
+    "@headlessui/react": "^1.7.12",
     "@reduxjs/toolkit": "^1.9.2",
     "nanoid": "^4.0.1",
     "react": "^18.2.0",

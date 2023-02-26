@@ -4,9 +4,49 @@
 
 @layer base {
   :root {
+    --color-text-primary: 30, 30, 30;
+    --color-text-placeholder: 76, 76, 76;
+    --color-text-search-placeholder: 171, 172, 173;
+
+    --color-text-menu-button: 32, 33, 36;
+    --color-text-menu-button-active: 32, 33, 36;
+    --color-text-menu-button-hover: 32, 33, 36;
+    
+    --color-text-button: 32, 33, 36;
+    --color-text-button-active: 32, 33, 36;
+    --color-text-button-hover: 32, 33, 36;
+
+    --color-background-primary: 255, 255, 255;
+    --color-background-search: 241, 243, 244;
+    --color-background-menu-button: 255, 255, 255;
+    --color-background-menu-button-hover: 143, 143, 143;
+    --color-background-menu-button-active: 85, 64, 1;
+    --color-background-button: 255, 255, 255;
+    --color-background-button-hover: 143, 143, 143;
+    --color-background-button-active: 85, 64, 1;
+    
+    --color-note-01: 242, 139, 130;
+    --color-note-02: 251, 188, 4;
+    --color-note-03: 255, 244, 117;
+    --color-note-04: 204, 255, 144;
+    --color-note-05: 167, 255, 235;
+    --color-note-06: 203, 240, 248;
+    --color-note-07: 174, 203, 250;
+    --color-note-08: 215, 174, 251;
+    --color-note-09: 253, 207, 232;
+    --color-note-10: 230, 201, 168;
+    --color-note-11: 232, 234, 237;
+
+    --color-border-primary: 160, 160, 180;
+    --color-border-weak: 100, 110, 120;
+    --color-border-strong: 200, 200, 220;
+    --color-border-seperator: 229, 231, 235;
+
+    --color-shadow-primary: 160, 160, 180;
+/*     
     --color-text-primary: theme("colors.lightTextPrimary.DEFAULT");
     --color-text-placeholder: theme("colors.lightTextPlaceholder.DEFAULT");
-    --color-text-search-placeholder: theme(colors.lightSearchTextPlaceholder.DEFAULT);
+    --color-text-search-placeholder: theme("colors.lightSearchTextPlaceholder.DEFAULT");
     --color-background-primary: theme("colors.lightPrimaryBackground.DEFAULT");
     --color-background-search: theme("colors.lightSearchBackground.DEFAULT");
     --color-note-01: theme("colors.lightRed.DEFAULT");
@@ -20,12 +60,24 @@
     --color-note-09: theme("colors.lightPink.DEFAULT");
     --color-note-10: theme("colors.lightBrown.DEFAULT");
     --color-note-11: theme("colors.lightGray.DEFAULT");
+    --color-background-menu-button: theme("colors.lightPrimaryBackground.DEFAULT");
+    --color-background-menu-button-hover: theme("colors.lightPrimaryBackground.900");
+    --color-background-menu-button-active: theme("colors.lightOrange.800");
+    --color-text-menu-button: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-menu-button-active: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-menu-button-hover: theme("colors.lightTextPrimary.DEFAULT");
+    --color-background-button: theme("colors.lightPrimaryBackground.DEFAULT");
+    --color-background-button-hover: theme("colors.lightPrimaryBackground.900");
+    --color-background-button-active: theme("colors.lightOrange.800");
+    --color-text-button: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-button-active: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-button-hover: theme("colors.lightTextPrimary.DEFAULT"); */
   }
-
+/* 
   .theme-dark {
     --color-text-primary: theme("colors.darkTextPrimary.DEFAULT");
     --color-text-placeholder: theme("colors.darkTextPlaceholder.DEFAULT");
-    --color-text-search-placeholder: theme(colors.darkSearchTextPlaceholder.DEFAULT);
+    --color-text-search-placeholder: theme("colors.darkSearchTextPlaceholder.DEFAULT");
     --color-background-primary: theme("colors.darkPrimaryBackground.DEFAULT");
     --color-background-search: theme("colors.darkSearchBackground.DEFAULT");
     --color-note-01: theme("colors.darkRed.DEFAULT");
@@ -42,13 +94,13 @@
     --color-border-primary: theme("colors.gray.600");
     --color-shadow-primary: theme("colors.gray.600");
     --color-border-seperator: theme("colors.gray.600");
-
+    
   }
 
   .theme-light {
     --color-text-primary: theme("colors.lightTextPrimary.DEFAULT");
     --color-text-placeholder: theme("colors.lightTextPlaceholder.DEFAULT");
-    --color-text-search-placeholder: theme(colors.lightSearchTextPlaceholder.DEFAULT);
+    --color-text-search-placeholder: theme("colors.lightSearchTextPlaceholder.DEFAULT");
     --color-background-primary: theme("colors.lightPrimaryBackground.DEFAULT");
     --color-background-search: theme("colors.lightSearchBackground.DEFAULT");
     --color-note-01: theme("colors.lightRed.DEFAULT");
@@ -65,7 +117,42 @@
     --color-border-primary: theme("colors.gray.400");
     --color-border-seperator: theme("colors.gray.200");
     --color-shadow-primary: theme("colors.gray.400");
+    --color-text-menu-button: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-menu-button-hover: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-menu-button-active: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-button: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-button-hover: theme("colors.lightTextPrimary.DEFAULT");
+    --color-text-button-active: theme("colors.lightTextPrimary.DEFAULT");
+    --color-background-menu-button: theme("colors.lightPrimaryBackground.DEFAULT");
+    --color-background-menu-button-hover: theme("colors.lightPrimaryBackground.600");
+    --color-background-menu-button-active: theme("colors.lightOrange.800");
+    --color-background-button: theme("colors.lightPrimaryBackground.DEFAULT");
+    --color-background-button-hover: theme("colors.lightPrimaryBackground.600");
+    --color-background-button-active: theme("colors.lightOrange.800");
   }
+
+  .theme-zurna {
+    --color-text-primary: theme("colors.darkTextPrimary.100");
+    --color-text-placeholder: theme("colors.darkTextPlaceholder.DEFAULT");
+    --color-text-search-placeholder: theme("colors.darkSearchTextPlaceholder.DEFAULT");
+    --color-background-primary: theme("colors.darkPrimaryBackground.700");
+    --color-background-search: theme("colors.darkSearchBackground.DEFAULT");
+    --color-note-01: theme("colors.froly.DEFAULT");
+    --color-note-02: theme("colors.goldDrop.DEFAULT");
+    --color-note-03: theme("colors.buddhaGold.DEFAULT");
+    --color-note-04: theme("colors.limeade.DEFAULT");
+    --color-note-05: theme("colors.caribbeanGreen.DEFAULT");
+    --color-note-06: theme("colors.robinSEggBlue.DEFAULT");
+    --color-note-07: theme("colors.cerulean.DEFAULT");
+    --color-note-08: theme("colors.melrose.DEFAULT");
+    --color-note-09: theme("colors.heliotrope.DEFAULT");
+    --color-note-10: theme("colors.hotPink.DEFAULT");
+    --color-note-11: theme("colors.cerulean.DEFAULT");
+    --color-border-primary: theme("colors.gray.400");
+    --color-border-seperator: theme("colors.gray.200");
+    --color-shadow-primary: theme("colors.gray.400");
+  } */
+
 }
 
 /* html {

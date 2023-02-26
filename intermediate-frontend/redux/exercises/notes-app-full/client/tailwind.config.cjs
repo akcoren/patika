@@ -62,46 +62,73 @@ module.exports = {
       // border colors are needed
       // shadow colors are needed
 
+      // hover border color
+      // hover button color
+
+      // menu button color
+      // menu item text color
+      // active menu item color
+      // active menu item text color
+      // active border color
+
+      // focus on clickable things
+      // hover shade on clickable color
+      // hover shade on note items
+
+
+
+
       textColor: {
         skin: {
-          "primary": 'var(--color-text-primary)',
-          "placeholder": 'var(--color-text-placeholder)',
-          "search-placeholder": 'var(--color-text-search-placeholder)',
-          "deneme": 'var(--color-note-01)'
+          "primary": 'rgba(var(--color-text-primary), <alpha-value>)',
+          "placeholder": 'rgba(var(--color-text-placeholder), <alpha-value>)',
+          "search-placeholder": 'rgba(var(--color-text-search-placeholder), <alpha-value>)',
+          "menu-button": 'rgba(var(--color-text-menu-button), <alpha-value>)',
+          "menu-button-hover": 'rgba(var(--color-text-menu-button-hover), <alpha-value>)',
+          "menu-button-active": 'rgba(var(--color-text-menu-button-active), <alpha-value>)',
+          "button": 'rgba(var(--color-text-button), <alpha-value>)',
+          "button-hover": 'rgba(var(--color-text-button-hover), <alpha-value>)',
+          "button-active": 'rgba(var(--color-text-button-active), <alpha-value>)',
         },
       },
       backgroundColor: {
         skin: {
-          "primary": 'var(--color-background-primary)',
-          "search": 'var(--color-background-search)',
-          "note-01": 'var(--color-note-01)',
-          "note-02": 'var(--color-note-02)',
-          "note-03": 'var(--color-note-03)',
-          "note-04": 'var(--color-note-04)',
-          "note-05": 'var(--color-note-05)',
-          "note-06": 'var(--color-note-06)',
-          "note-07": 'var(--color-note-07)',
-          "note-08": 'var(--color-note-08)',
-          "note-09": 'var(--color-note-09)',
-          "note-10": 'var(--color-note-10)',
-          "note-11": 'var(--color-note-11)',
+          "primary": 'rgba(var(--color-background-primary), <alpha-value>)',
+          "search": 'rgba(var(--color-background-search), <alpha-value>)',
+          "menu-button": 'rgba(var(--color-background-menu-button), <alpha-value>)',
+          "menu-button-hover": 'rgba(var(--color-background-menu-button-hover), <alpha-value>)',
+          "menu-button-active": 'rgba(var(--color-background-menu-button-active), <alpha-value>)',
+          "button": 'rgba(var(--color-background-button), <alpha-value>)',
+          "button-hover": 'rgba(var(--color-background-button-hover), <alpha-value>)',
+          "button-active": 'rgba(var(--color-background-button-active), <alpha-value>)',
+          "note-00": 'rgba(var(--color-background-primary), <alpha-value>)',
+          "note-01": 'rgba(var(--color-note-01), <alpha-value>)',
+          "note-02": 'rgba(var(--color-note-02), <alpha-value>)',
+          "note-03": 'rgba(var(--color-note-03), <alpha-value>)',
+          "note-04": 'rgba(var(--color-note-04), <alpha-value>)',
+          "note-05": 'rgba(var(--color-note-05), <alpha-value>)',
+          "note-06": 'rgba(var(--color-note-06), <alpha-value>)',
+          "note-07": 'rgba(var(--color-note-07), <alpha-value>)',
+          "note-08": 'rgba(var(--color-note-08), <alpha-value>)',
+          "note-09": 'rgba(var(--color-note-09), <alpha-value>)',
+          "note-10": 'rgba(var(--color-note-10), <alpha-value>)',
+          "note-11": 'rgba(var(--color-note-11), <alpha-value>)',
         },
       },
       borderColor: {
         skin: {
-          "primary": 'var(--color-border-primary)',
-          "seperator": 'var(--color-border-seperator)',
+          "primary": 'rgba(var(--color-border-primary), <alpha-value>)',
+          "seperator": 'rgba(var(--color-border-seperator), <alpha-value>)',
         },
       },
       boxShadowColor: {
         skin: {
-          "primary": 'var(--color-shadow-primary)',
+          "primary": 'rgba(var(--color-shadow-primary), <alpha-value>)',
         },
       },
     },
   },
   plugins: [
-    require('@headlessui/tailwindcss'),
     require('prettier-plugin-tailwindcss'),
   ],
 }
