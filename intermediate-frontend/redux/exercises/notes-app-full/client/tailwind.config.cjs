@@ -118,6 +118,9 @@ module.exports = {
       borderColor: {
         skin: {
           "primary": 'rgba(var(--color-border-primary), <alpha-value>)',
+          "inverted": 'rgba(var(--color-border-inverted), <alpha-value>)',
+          "weak": 'rgba(var(--color-border-weak), <alpha-value>)',
+          "strong": 'rgba(var(--color-border-strong), <alpha-value>)',
           "seperator": 'rgba(var(--color-border-seperator), <alpha-value>)',
         },
       },
@@ -130,6 +133,7 @@ module.exports = {
   },
   plugins: [
     require('prettier-plugin-tailwindcss'),
+    require('@tailwindcss/line-clamp'),
   ],
 }
 

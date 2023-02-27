@@ -38,9 +38,10 @@
     --color-note-11: 232, 234, 237;
 
     --color-border-primary: 160, 160, 180;
-    --color-border-weak: 100, 110, 120;
-    --color-border-strong: 200, 200, 220;
-    --color-border-seperator: 229, 231, 235;
+    --color-border-inverted: 50, 50, 50;
+    --color-border-strong: 100, 100, 100;
+    --color-border-weak: 200, 200, 220;
+    --color-border-seperator: 230, 230, 230;
 
     --color-shadow-primary: 160, 160, 180;
 /*     

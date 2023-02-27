@@ -3,11 +3,13 @@ import { nanoid } from "nanoid";
 import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { changeNote } from "../redux/notes/notesSlice";
+import ColorPicker from "./ColorPicker";
 
-export default function MyModal({ title, body, id, color }) {
-  const [isOpen, setIsOpen] = useState(false);
+const MyModal = ({ title, body, id, color }) => {
   const [modalTitle, setModalTitle] = useState(title);
   const [modalBody, setModalBody] = useState(body);
+  const [modalColor, setModalColor] = useState(color);
+  const [isOpen, setIsOpen] = useState(false);
 
   const textAreaRef = useRef(null);
 
@@ -29,7 +31,7 @@ export default function MyModal({ title, body, id, color }) {
         id: id,
         title: modalTitle,
         body: modalBody,
-        color: color,
+        color: modalColor,
       })
     );
     setIsOpen(false);
@@ -82,38 +84,47 @@ export default function MyModal({ title, body, id, color }) {
         <div className="fixed inset-0 overflow-y-auto bg-black bg-opacity-40">
           <div className="flex min-h-full items-center justify-center p-0 text-center">
             <Dialog.Panel
-              className={` min-h-[70vh]  min-w-[50vw]  max-w-md overflow-hidden
-              rounded-md border-2 border-skin-primary p-0
+              className={`min-w-[30vw]  max-w-md overflow-hidden
+              rounded-md border-[1px] border-skin-inverted p-0 
               text-left align-middle shadow-md shadow-skin-primary
-              ${noteColors[color]}`}>
-              <div className="flex flex-col">
+              ${noteColors[modalColor]}`}>
+              <div className="flex flex-col items-stretch flex-grow">
                 <input
                   type="text"
                   name="modalTitle"
                   id="modalTitle"
-                  className={`text-md block w-full overflow-hidden border-b-2 border-b-skin-seperator p-3 placeholder:text-skin-placeholder focus:outline-none`}
+                  className={`text-md block w-full overflow-hidden border-b-[1px] 
+                  border-b-skin-seperator p-3 placeholder:text-skin-placeholder
+                   focus:outline-none ${noteColors[modalColor]}`}
                   value={modalTitle}
                   onChange={handleTitleChange}
                   placeholder="Title"
                 />
                 <textarea
-                  rows={3}
                   type="text"
                   name="modalBody"
                   id="modalBody"
                   ref={textAreaRef}
-                  className={`w-full grow px-3 pt-3 pb-0 text-sm placeholder:text-skin-placeholder focus:outline-none`}
+                  className={`w-full px-3 pt-2 pb-4 text-sm resize-none 
+                  placeholder:text-skin-placeholder min-h-[40vh] max-h-[70vh]
+                   focus:outline-none ${noteColors[modalColor]}`}
                   value={modalBody}
                   onChange={handleBodyChange}
                   placeholder="What's on your mind?"
                 />
 
-                <div className="mt-4 self-end">
+
+                <div className="mt-4 flex justify-between items-center">
+                <ColorPicker color={modalColor} setColor={setModalColor} size={4} />
                   <button
                     type="button"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="rounded-md 
+                     border border-transparent bg-blue-100 px-4 py-2
+                      text-sm font-medium text-blue-900 hover:bg-blue-200
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500
+                        focus-visible:ring-offset-2"
                     onClick={closeModal}>
-                    Got it, thanks!
+                    M
                   </button>
                 </div>
               </div>
@@ -124,3 +135,6 @@ export default function MyModal({ title, body, id, color }) {
     </>
   );
 }
+
+
+export default MyModal;

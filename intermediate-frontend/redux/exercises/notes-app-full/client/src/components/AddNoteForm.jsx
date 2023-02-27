@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from "../redux/notes/notesSlice";
 import ColorPicker from "./ColorPicker";
+import { noteColors } from "../constants";
 
 const AddNoteForm = () => {
   const [title, setTitle] = useState("");
@@ -17,8 +18,6 @@ const AddNoteForm = () => {
   };
 
   useEffect(resizeTextArea, [body]);
-
-
 
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -41,23 +40,9 @@ const AddNoteForm = () => {
     setBody(e.target.value);
   };
 
-  const noteColors = [
-    "bg-skin-primary",
-    "bg-skin-note-01",
-    "bg-skin-note-02",
-    "bg-skin-note-03",
-    "bg-skin-note-04",
-    "bg-skin-note-05",
-    "bg-skin-note-06",
-    "bg-skin-note-07",
-    "bg-skin-note-08",
-    "bg-skin-note-09",
-    "bg-skin-note-10",
-    "bg-skin-note-11",
-  ];
 
   return (
-    <div className="w-full group">
+    <div className="group w-full">
       <form onSubmit={handleSubmit} className="flex flex-col items-center text-skin-primary">
         ADD NOTE FORM
         <div className="w-1/2 rounded-md border-2 border-skin-primary shadow-md shadow-skin-primary">
@@ -77,26 +62,15 @@ const AddNoteForm = () => {
             id="noteBody"
             ref={textAreaRef}
             className={`w-full break-all focus:outline-none
-            ${noteColors[color]} block max-h-[60vh] group-focus:min-h-[10rem]
-            w-full overflow-y-auto rounded-b-md p-3 text-sm`}
+            ${noteColors[color]} block max-h-[60vh] w-full
+            overflow-y-auto rounded-b-md p-3 text-sm group-focus:min-h-[10rem]`}
             value={body}
             onChange={handleBodyChange}
             placeholder="What's on your mind?"
           />
-          {/* <span
-            contentEditable
-            type="text"
-            name="noteBody"
-            id="noteBody"
-            className={`w-full break-all empty:before:content-['zurna'] focus:outline-none
-          ${noteColors[color]} block max-h-[60vh] min-h-[4rem] w-full overflow-y-auto rounded-b-md px-3 py-3 text-sm empty:before:text-skin-placeholder`}
-            value={body}
-            onChange={handleBodyChange}
-            placeholder="What's on your mind?"
-          /> */}
         </div>
         <div className="flex py-2">
-          <ColorPicker color={color} setColor={setColor} />
+          <ColorPicker color={color} setColor={setColor} size={6} />
           <button
             className="rounded-md border border-skin-primary bg-skin-menu-button py-2 px-4 text-sm font-medium text-skin-button
             shadow-sm hover:bg-skin-button-hover hover:text-skin-menu-button-hover focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
