@@ -17,10 +17,10 @@ export default function Example() {
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button
-            className="w-full justify-center rounded-md border border-skin-primary
-             bg-skin-menu-button px-4 py-2 text-sm font-medium text-skin-menu-button 
-             hover:bg-skin-menu-button-hover hover:text-skin-menu-button-hover">
-            Options
+            className="rounded-md border border-skin-primary bg-skin-menu-button 
+            py-2 px-4 text-sm font-medium text-skin-button
+            shadow-sm hover:bg-skin-button-hover/20 hover:text-skin-menu-button-hover">
+            Themes
           </Menu.Button>
         </div>
 

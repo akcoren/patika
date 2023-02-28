@@ -59,6 +59,9 @@ module.exports = {
 
       },
 
+      fontFamily: {
+        "ubuntu": ['Ubuntu Mono', 'monospace'],
+      },
       // border colors are needed
       // shadow colors are needed
 
@@ -81,6 +84,7 @@ module.exports = {
       textColor: {
         skin: {
           "primary": 'rgba(var(--color-text-primary), <alpha-value>)',
+          "inverted": 'rgba(var(--color-text-inverted), <alpha-value>)',
           "placeholder": 'rgba(var(--color-text-placeholder), <alpha-value>)',
           "search-placeholder": 'rgba(var(--color-text-search-placeholder), <alpha-value>)',
           "menu-button": 'rgba(var(--color-text-menu-button), <alpha-value>)',
@@ -94,11 +98,13 @@ module.exports = {
       backgroundColor: {
         skin: {
           "primary": 'rgba(var(--color-background-primary), <alpha-value>)',
+          "inverted": 'rgba(var(--color-background-inverted), <alpha-value>)',
           "search": 'rgba(var(--color-background-search), <alpha-value>)',
           "menu-button": 'rgba(var(--color-background-menu-button), <alpha-value>)',
           "menu-button-hover": 'rgba(var(--color-background-menu-button-hover), <alpha-value>)',
           "menu-button-active": 'rgba(var(--color-background-menu-button-active), <alpha-value>)',
           "button": 'rgba(var(--color-background-button), <alpha-value>)',
+          "button-inverted": 'rgba(var(--color-background-button-inverted), <alpha-value>)',
           "button-hover": 'rgba(var(--color-background-button-hover), <alpha-value>)',
           "button-active": 'rgba(var(--color-background-button-active), <alpha-value>)',
           "note-00": 'rgba(var(--color-background-primary), <alpha-value>)',
@@ -136,7 +142,5 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
   ],
 }
-
-
 
 

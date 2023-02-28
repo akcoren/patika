@@ -4,6 +4,7 @@ import { destroyNote, changeNote } from "../redux/notes/notesSlice";
 import { Dialog } from "@headlessui/react";
 import { noteColors } from "../constants";
 import ColorPicker from "./ColorPicker";
+import { TrashIcon } from "@heroicons/react/24/outline";
 
 const Note = ({ id, title, body, color }) => {
   const dispatch = useDispatch();
@@ -62,29 +63,28 @@ const Note = ({ id, title, body, color }) => {
       text-skin-primary hover:border-skin-primary hover:shadow-lg hover:shadow-skin-primary`}
       onClick={openModal}>
       <div className="flex items-center justify-between px-1">
-        {/* <p className="p-1 invisible">{color}</p> */}
         <p className={`break-all rounded px-2 line-clamp-2`}>{title}</p>
-        <button
-          className="invisible rounded-md border border-skin-weak bg-skin-button/50 py-1
-          px-2 text-sm font-medium text-skin-button 
-          shadow-sm hover:border-skin-primary
-          hover:bg-skin-button-hover/20 hover:text-skin-button-hover
-          focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
-          group-hover:visible"
-          onClick={() => handleDestroy(id)}
-          type="button">
-          Delete
-        </button>
+        <div
+          className="invisible mt-1 flex h-7 w-7 
+          shrink-0 items-center justify-center
+          rounded-md border border-skin-weak bg-skin-button/40 py-1
+          text-skin-primary 
+          hover:border-skin-primary 
+          hover:bg-skin-button-inverted/20
+          hover:text-skin-inverted
+          group-hover:visible">
+          <TrashIcon className="h-5 w-5" onClick={() => handleDestroy(id)} type="button" />
+        </div>
       </div>
       <p
         className={`${noteColors[color]}
-        mb-1 break-all rounded px-2 pt-1 text-sm line-clamp-4`}>
+        mt-0 mb-2 break-all rounded px-2 pt-1 text-sm line-clamp-4`}>
         {body}
       </p>
 
       <Dialog
         as="div"
-        className="relative inset-0 z-10 overflow-y-auto "
+        className="relative inset-0 z-10 overflow-y-auto font-mono "
         onClose={closeModal}
         open={isOpen}>
         <div className="fixed inset-0 overflow-y-auto bg-black bg-opacity-40">
@@ -101,7 +101,7 @@ const Note = ({ id, title, body, color }) => {
                   id="modalTitle"
                   className={`text-md block w-full overflow-hidden border-b-[1px] 
                   border-b-skin-seperator p-3 placeholder:text-skin-placeholder
-                   focus:outline-none ${noteColors[modalColor]}`}
+                  focus:outline-none ${noteColors[modalColor]}`}
                   value={modalTitle}
                   onChange={handleTitleChange}
                   placeholder="Title"
@@ -113,24 +113,28 @@ const Note = ({ id, title, body, color }) => {
                   ref={textAreaRef}
                   className={`max-h-[70vh] min-h-[40vh] w-full resize-none px-3 pt-2 
                   pb-4 text-sm placeholder:text-skin-placeholder
-                   focus:outline-none ${noteColors[modalColor]}`}
+                  focus:outline-none ${noteColors[modalColor]}`}
                   value={modalBody}
                   onChange={handleBodyChange}
                   placeholder="What's on your mind?"
                 />
 
-                <div className="mt-4 flex items-center justify-between">
+                <div className="my-1 flex items-center justify-between border-t-[1px] border-skin-seperator">
                   <ColorPicker color={modalColor} setColor={setModalColor} size={4} />
-                  <button
-                    type="button"
-                    className="rounded-md 
-                     border border-transparent bg-blue-100 px-4 py-2
-                      text-sm font-medium text-blue-900 hover:bg-blue-200
-                       focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500
-                        focus-visible:ring-offset-2"
-                    onClick={closeModal}>
-                    M
-                  </button>
+                  <div
+                    className="flex h-7 w-7 
+                    shrink-0 items-center justify-center
+                    rounded-md border border-skin-weak bg-skin-button/40 py-1
+                    text-skin-primary 
+                    hover:border-skin-primary 
+                    hover:bg-skin-button-inverted/20
+                    hover:text-skin-inverted m-2">
+                    <TrashIcon
+                      className="h-5 w-5"
+                      onClick={() => handleDestroy(id)}
+                      type="button"
+                    />
+                  </div>
                 </div>
               </div>
             </Dialog.Panel>

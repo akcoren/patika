@@ -13,9 +13,8 @@ function App() {
 
   return (
     <div className={`${theme} theme-dark min-h-screen min-w-full bg-skin-primary`}>
-      <div className="mx-auto flex max-w-5xl flex-col items-center">
+      <div className="mx-auto flex max-w-5xl flex-col items-center font-mono">
         <Header />
-        <Heading />
         <Content />
         <Footer />
       </div>
