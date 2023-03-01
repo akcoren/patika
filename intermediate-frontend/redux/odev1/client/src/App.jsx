@@ -1,17 +1,24 @@
-import "./App.css";
-import Header from "./components/Header";
 import Content from "./components/Content";
-import Footer from "./components/Footer.jsx";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Heading from "./components/Heading";
+import { useSelector } from "react-redux";
+
 
 function App() {
+
+  const theme = useSelector((state) => state.notes.theme);
+
+
+
   return (
-    <>
-      <section className="todoapp">
+    <div className={`${theme} theme-dark min-h-screen min-w-full bg-skin-primary`}>
+      <div className="mx-auto flex max-w-5xl flex-col items-center font-mono">
         <Header />
         <Content />
-      </section>
-      <Footer />
-    </>
+        <Footer />
+      </div>
+    </div>
   );
 }
 

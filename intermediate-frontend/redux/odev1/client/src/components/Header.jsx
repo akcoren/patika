@@ -1,13 +1,13 @@
-import React from "react";
-import Form from "./Form";
+import React from 'react'
+import MyDropdown from './MyDropdown'
 
 const Header = () => {
   return (
-    <header className="header">
-      <h1>todos</h1>
-      <Form />
-    </header>
-  );
-};
+    
+    <div className='flex w-full justify-end mt-4'>
+      <MyDropdown />
+    </div>
+  )
+}
 
-export default Header;
+export default Header
