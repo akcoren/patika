@@ -7,31 +7,47 @@ const Home = () => {
   const data = useSelector((state) => state.characters);
   const isLoading = useSelector((state) => state.characters.isLoading);
   const error = useSelector((state) => state.characters.error);
+  const page = useSelector((state) => state.characters.page);
+  const hasNextPage = useSelector((state) => state.characters.hasNextPage);
+
   const dispatch = useDispatch();
 
-  console.log(data);
   useEffect(() => {
-    dispatch(fetchCharacters());
+    dispatch(fetchCharacters(1));
   }, [dispatch]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const handleOnClick = () => {
+    dispatch(fetchCharacters(page));
+  };
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
   return (
-    <div>
-      <div className="columns-4 gap-6 p-6">
+    <div className="mb-5">
+      <div className="columns-4 gap-12 p-6 h-full">
         {data.people.map((p) => {
           return (
-            <div key={p.char_id} className="w-ful mb-6 box-border border-[24px]">
+            <div key={p.char_id} className="w-full mb-6 box-border border-[24px] bg-slate-200">
               <img className="w-full" src={p.img} alt={p.name} />
+              <h3 className="p-3">{p.name}</h3>
             </div>
           );
         })}
+      </div>
+      <div className="flex flex-col justify-center items-center">
+        {isLoading && <h3 className="p-3 my-2">Loading...</h3>}
+
+        {hasNextPage ? (
+          <button
+            className="border rounded-md bg-slate-200 cursor-pointer py-2 px-4 border-black"
+            onClick={handleOnClick}>
+            Load More ({page})
+          </button>
+        ) : (
+          <h3>No more character left.</h3>
+        )}
       </div>
     </div>
   );
