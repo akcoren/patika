@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCharacters } from "../../redux/charactersSlice";
-// import charactersSlice from "../../redux/charactersSlice";
+import { Link } from "react-router-dom";
+import { fetchCharacters, clearCharactersState } from "../../redux/charactersSlice";
+
 
 const Home = () => {
   const data = useSelector((state) => state.characters);
@@ -11,9 +12,12 @@ const Home = () => {
   const hasNextPage = useSelector((state) => state.characters.hasNextPage);
 
   const dispatch = useDispatch();
-
+  let firstLoad = true
   useEffect(() => {
-    dispatch(fetchCharacters(1));
+    if (firstLoad) {
+      dispatch(fetchCharacters(1))
+      firstLoad = false
+    }
   }, [dispatch]);
 
   const handleOnClick = () => {
@@ -29,14 +33,16 @@ const Home = () => {
       <div className="columns-4 gap-12 p-6 h-full">
         {data.people.map((p) => {
           return (
-            <div key={p.char_id} className="w-full mb-6 box-border border-[24px] bg-slate-200">
-              <img className="w-full" src={p.img} alt={p.name} />
-              <h3 className="p-3">{p.name}</h3>
-            </div>
+            <Link key={p.char_id} to="/">
+              <div className="w-full mb-6 box-border border-[24px] bg-slate-200 group">
+                <img className="w-full" src={p.img} alt={p.name} />
+                <h3 className="p-3 group-hover:underline font-semibold decoration-2">{p.name}</h3>
+              </div>
+            </Link>
           );
         })}
       </div>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center h-12">
         {isLoading && <h3 className="p-3 my-2">Loading...</h3>}
 
         {hasNextPage ? (

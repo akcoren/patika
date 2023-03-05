@@ -14,13 +14,17 @@ export const charactersSlice = createSlice({
     people: [],
     isLoading: false,
     error: null,
-    page: 0,
+    page: 1,
     hasNextPage: true,
   },
-  reducers: {},
+  reducers: {
+    clearCharactersState: (state) => {
+      state.people = [];
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCharacters.fulfilled, (state, action) => {
-      if(action.payload.length < 12) {
+      if (action.payload.length < 12) {
         state.hasNextPage = false
       }
       state.people = [...state.people, ...action.payload]
@@ -38,5 +42,5 @@ export const charactersSlice = createSlice({
   }
 
 });
-
+export const { clearCharactersState } = charactersSlice.actions;
 export default charactersSlice.reducer;
