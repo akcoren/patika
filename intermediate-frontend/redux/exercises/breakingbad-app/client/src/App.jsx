@@ -1,11 +1,27 @@
 import { createBrowserRouter, RouterProvider, Route, Link, Outlet } from "react-router-dom";
-import Content from "./components/Content";
 import Home from "./pages/Home";
+import Detail from "./pages/Detail";
+import Quotes from "./pages/Quotes";
+import Navigator from "./components/Navigator";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Navigator />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/char/:char_id",
+        element: <Detail />,
+      },
+      {
+        path: "/quotes",
+        element: <Quotes />,
+      },
+    ]
   },
 
 ]);

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, isPending } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const char_limit = 12
@@ -12,7 +12,7 @@ export const charactersSlice = createSlice({
   name: 'characters',
   initialState: {
     people: [],
-    isLoading: false,
+    status: "idle",
     error: null,
     page: 1,
     hasNextPage: true,
@@ -28,14 +28,14 @@ export const charactersSlice = createSlice({
         state.hasNextPage = false
       }
       state.people = [...state.people, ...action.payload]
-      state.isLoading = false
+      state.status = "succeeded"
       state.page += 1
     });
     builder.addCase(fetchCharacters.pending, (state, action) => {
-      state.isLoading = true
+      state.isLoading = "loading"
     });
     builder.addCase(fetchCharacters.rejected, (state, action) => {
-      state.isLoading = false
+      state.isLoading = "failed"
       state.error = action.error.message
     });
 
